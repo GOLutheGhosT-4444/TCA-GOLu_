@@ -1,0 +1,42 @@
+name: Auto Current Affairs Fetcher
+
+# Ye batata hai ki script kab chalegi
+on:
+  schedule:
+    - cron: '0 2,14 * * *' # Har din subah 7:30 AM aur shaam 7:30 PM (IST) par khud chalegi
+  workflow_dispatch: # Button dabakar manual chalane ka option dega
+
+# Permissions: Taki bot JSON file ko repo me save kar sake
+permissions:
+  contents: write
+
+jobs:
+  run-news-engine:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Libraries
+        run: pip install -r requirements.txt
+
+      - name: Run Python Script
+        env:
+          # GitHub Secrets se keys nikal kar script ko de raha hai
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          AES_SECRET_KEY: ${{ secrets.AES_SECRET_KEY }}
+        run: python main.py
+
+      - name: Commit & Save Encrypted JSON
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add encrypted_news.json
+          git commit -m "Auto-Update: Latest Current Affairs" || exit 0
+          git push
