@@ -13,12 +13,14 @@ import os
 # ⚙️ KEYS LOAD FROM GITHUB SECRETS
 # ==========================================
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
-# AES Key ko string se bytes mein convert karna zaroori hai
-AES_SECRET_KEY = os.environ.get("AES_SECRET_KEY").encode('utf-8') 
+AES_SECRET_KEY = os.environ.get("AES_SECRET_KEY")
 
 if not GEMINI_API_KEY or not AES_SECRET_KEY:
     print("Error: API Keys not found in Secrets!")
     exit()
+
+# AES key ko bytes me convert karna zaroori hai
+AES_SECRET_KEY = AES_SECRET_KEY.encode('utf-8')
 
 # Initialize Gemini AI
 genai.configure(api_key=GEMINI_API_KEY)
@@ -59,6 +61,32 @@ Rule 2: If the news is highly relevant (Global Economics, International Relation
 }
 
 Do NOT output any markdown blocks like ```json. Output ONLY the raw JSON string.
+"""
+
+# ==========================================
+# 🤖 BACKUP AI PROMPT (Jab RSS se news na mile)
+# ==========================================
+FALLBACK_PROMPT = """
+You are an expert Current Affairs generator for competitive exams.
+The regular news feeds failed today. You need to provide the TOP 3 most important global current affairs that happened very recently (Economics, International Relations, Space/Defense, or Global Sports).
+
+You MUST output strictly a JSON ARRAY of objects. Do NOT use markdown blocks like ```json.
+Format of the array must be exactly like this:
+[
+  {
+    "status": "ACCEPTED",
+    "topic": "Short clear title",
+    "what": "Exactly what happened?",
+    "who": "Key people or countries",
+    "where": "Location",
+    "when": "Recent date",
+    "why_how": "Reason or background",
+    "takeaway": "Exam perspective summary",
+    "category": "Global_AI_Search",
+    "source_link": "AI_Generated"
+  }
+]
+Output ONLY the raw JSON array.
 """
 
 def get_article_text(url):
@@ -102,6 +130,8 @@ def run_engine():
                     ai_text = response.text.strip()
                     if ai_text.startswith("```json"):
                         ai_text = ai_text[7:-3].strip()
+                    elif ai_text.startswith("```"):
+                        ai_text = ai_text[3:-3].strip()
                         
                     result_json = json.loads(ai_text)
                     if result_json.get("status") == "ACCEPTED":
@@ -116,13 +146,45 @@ def run_engine():
                 
                 time.sleep(2) 
 
+    # ==========================================
+    # 🆘 BACKUP PLAN: Agar koi news nahi mili
+    # ==========================================
+    if not final_report:
+        print("\n⚠️ ALERT: RSS feeds se koi exam-oriented news nahi mili!")
+        print("🤖 AI khudse worldwide search karke news laa raha hai...")
+        try:
+            response = model.generate_content(FALLBACK_PROMPT)
+            ai_text = response.text.strip()
+            
+            # Markdown clean up
+            if ai_text.startswith("```json"):
+                ai_text = ai_text[7:-3].strip()
+            elif ai_text.startswith("```"):
+                ai_text = ai_text[3:-3].strip()
+                
+            fallback_data = json.loads(ai_text)
+            
+            # Agar list aayi hai to extend karo
+            if isinstance(fallback_data, list):
+                final_report.extend(fallback_data)
+            elif isinstance(fallback_data, dict):
+                final_report.append(fallback_data)
+                
+            print("✅ AI ne successfully Global Search se news generate kar li!")
+        except Exception as e:
+            print(f"❌ AI Fallback bhi fail ho gaya: {e}")
+
+    # ==========================================
+    # 🔒 ENCRYPT & SAVE
+    # ==========================================
     if final_report:
+        print("\n[!] Encrypting data with AES-256...")
         encrypted_package = encrypt_data(final_report)
         with open("encrypted_news.json", "w") as f:
             json.dump(encrypted_package, f, indent=4)
         print("✅ Success! Data Encrypted and saved.")
     else:
-        print("⚠️ No valid news found today.")
+        print("⚠️ Severe Error: Fallback ke baad bhi data khali hai. File nahi banegi.")
 
 if __name__ == "__main__":
     run_engine()
