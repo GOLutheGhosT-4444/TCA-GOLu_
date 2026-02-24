@@ -3,7 +3,7 @@ name: Auto Current Affairs Fetcher
 # Ye batata hai ki script kab chalegi
 on:
   schedule:
-    - cron: '0 2,14 * * *' # Har din subah 7:30 AM aur shaam 7:30 PM (IST) par khud chalegi
+     # Har din subah 7:30 AM aur shaam 7:30 PM (IST) par khud chalegi
   workflow_dispatch: # Button dabakar manual chalane ka option dega
 
 # Permissions: Taki bot JSON file ko repo me save kar sake
