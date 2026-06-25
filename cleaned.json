@@ -1,0 +1,146 @@
+[
+    {
+        "is_exam_relevant": true,
+        "rejection_reason": "",
+        "rank": 5,
+        "core_topic": "Reserve Bank of India (RBI)",
+        "cleaned_news": "The Reserve Bank of India has mandated banks to submit daily data on foreign currency non-resident (bank) deposits, external commercial borrowings, and overseas foreign currency borrowings. This is part of its limited-period measures, announced on June 5, to attract foreign capital and stabilize the Rupee. These measures include bearing hedging costs on FCNR(B) deposits, exempting them from CRR/SLR, and providing concessional forex swaps for PSU ECBs.",
+        "static_facts": [
+            "The Reserve Bank of India was established on April 1, 1935, under the Reserve Bank of India Act, 1934.",
+            "Its headquarters are located in Mumbai, Maharashtra, having originally been established in Kolkata.",
+            "The RBI was nationalized on January 1, 1949.",
+            "The first Governor of the Reserve Bank of India was Sir Osborne Smith.",
+            "The first Indian Governor of the Reserve Bank of India was C.D. Deshmukh."
+        ],
+        "link": "https://www.thehindubusinessline.com/money-and-banking/rbis-seeks-daily-data-from-banks-under-its-limited-period-measures-to-attract-foreign-capital/article71122675.ece",
+        "date": "2026-06-25"
+    },
+    {
+        "is_exam_relevant": true,
+        "rejection_reason": "",
+        "rank": 4,
+        "core_topic": "National Highway Authority of India (NHAI)",
+        "cleaned_news": "The National Highway Authority of India (NHAI) has identified 595 accident-prone unauthorized parking areas on national highways, acting on a Supreme Court order. The Supreme Court's directive prohibits parking on highway carriageways and the construction of new commercial structures within the Right of Way, aiming to enhance road safety. This initiative follows a suo motu case by the court after significant road accident fatalities.",
+        "static_facts": [
+            "NHAI was established by an Act of Parliament in 1988.",
+            "It functions under the Ministry of Road Transport and Highways.",
+            "Its headquarters are located in New Delhi.",
+            "NHAI is responsible for the development, maintenance, and management of National Highways in India.",
+            "It is an autonomous agency of the Government of India."
+        ],
+        "link": "https://indianexpress.com/article/india/nhai-identifies-595-unauthorised-parking-locations-highways-supreme-court-order-10755874/",
+        "date": "2026-06-25"
+    },
+    {
+        "is_exam_relevant": true,
+        "rejection_reason": "",
+        "rank": 4,
+        "core_topic": "India-UK Comprehensive Economic and Trade Agreement (CETA)",
+        "cleaned_news": "Union Commerce Minister Piyush Goyal is visiting the UK from June 25-27 to finalize the operationalization of the India-UK Comprehensive Economic and Trade Agreement (CETA) and the Double Contribution Convention (DCC). This visit, ahead of the July 15 deadline, aims to strengthen economic partnership, streamline regulatory roadmaps, and enhance market access for Indian exports. Discussions will also cover mutual market access in services and investment ties.",
+        "static_facts": [
+            "CETA stands for Comprehensive Economic and Trade Agreement.",
+            "It is a proposed free trade agreement between India and the United Kingdom.",
+            "Formal negotiations for the India-UK FTA (which includes CETA) began in January 2022.",
+            "The agreement aims to significantly boost bilateral trade and investment between the two nations.",
+            "One of the key objectives of CETA is to reduce tariffs and non-tariff barriers on goods and services."
+        ],
+        "link": "https://www.hindustantimes.com/india-news/piyush-goyal-to-visit-uk-ahead-of-july-15-deadline-to-implement-trade-pact-101782317013244.html",
+        "date": "2026-06-25"
+    },
+    {
+        "is_exam_relevant": true,
+        "rejection_reason": "",
+        "rank": 4,
+        "core_topic": "Pradhan Mantri Schools for Rising India (PM SHRI) Scheme",
+        "cleaned_news": "The United Democratic Front (UDF) government in Kerala has agreed to implement the Union Government's PM SHRI scheme, a centrally sponsored initiative to upgrade over 14,500 schools nationwide. This decision comes with riders, as Kerala seeks to retain control over the curriculum and the selection of schools under the scheme, following previous political opposition and financial pressures.",
+        "static_facts": [
+            "The PM SHRI scheme was launched on September 5, 2022, on the occasion of Teachers' Day.",
+            "It is implemented by the Ministry of Education, Government of India.",
+            "The scheme aims to upgrade existing schools into exemplar institutions across India.",
+            "PM SHRI is a Centrally Sponsored Scheme, implying a cost-sharing mechanism between the Centre and states.",
+            "It is a key component and a major initiative under the National Education Policy (NEP) 2020."
+        ],
+        "link": "https://indianexpress.com/article/india/kerala-udf-government-to-implement-pm-shri-scheme-curriculum-row-10744817/",
+        "date": "2026-06-25"
+    },
+    {
+        "is_exam_relevant": true,
+        "rejection_reason": "",
+        "rank": 4,
+        "core_topic": "United States of America",
+        "cleaned_news": "US President Donald Trump announced an interim deal with Iran, expressing expectations for a ceasefire across West Asia, including Lebanon. The agreement led to a fall in oil prices and the reopening of the Strait of Hormuz, with global markets reacting positively.",
+        "static_facts": [
+            "Capital: Washington, D.C.",
+            "Form of Government: Federal presidential republic.",
+            "Legislature: Bicameral Congress (Senate and House of Representatives).",
+            "Currency: United States Dollar (USD).",
+            "Independence Day: July 4, 1776."
+        ],
+        "link": "https://indianexpress.com/article/world/after-signing-iran-deal-trump-says-he-expects-ceasefire-in-lebanon-too-10747049/",
+        "date": "2026-06-25"
+    },
+    {
+        "is_exam_relevant": true,
+        "rejection_reason": "",
+        "rank": 3,
+        "core_topic": "Kerala State Budget and Infrastructure Projects",
+        "cleaned_news": "The Kerala Budget 2026 has unveiled major infrastructure projects, including 'Mission Samudra' to integrate the state's coastline and ports, and the 'Southern Kerala Economic Corridor' to develop Thiruvananthapuram, Kollam, and Alappuzha as specialized economic zones. Key initiatives also include a Rare Earth and Critical Minerals Corridor, an Aviation and Logistics Hub, the 'Kerala Urban Growth Mission', and the implementation of Light Metro projects for Thiruvananthapuram and Kozhikode.",
+        "static_facts": [
+            "Capital of Kerala: Thiruvananthapuram.",
+            "Formation Date of Kerala: November 1, 1956.",
+            "Official Language of Kerala: Malayalam.",
+            "Number of Districts in Kerala: 14.",
+            "Highest point in Kerala: Anamudi."
+        ],
+        "link": "https://indianexpress.com/article/india/from-rare-earth-corridor-to-light-metro-top-infra-projects-announced-in-kerala-budget-2026-10747302/",
+        "date": "2026-06-25"
+    },
+    {
+        "is_exam_relevant": true,
+        "rejection_reason": "",
+        "rank": 3,
+        "core_topic": "Union Minister Resignation / President of India",
+        "cleaned_news": "Union Minister George Kurian resigned after his six-year term in the Rajya Sabha expired. President Droupadi Murmu accepted his resignation with immediate effect under clause (2) of Article 75 of the Constitution.",
+        "static_facts": [
+            "Droupadi Murmu is the 15th President of India.",
+            "Article 75(2) of the Indian Constitution states that Ministers hold office during the pleasure of the President.",
+            "The Rajya Sabha is the Upper House of the Indian Parliament.",
+            "The Union Council of Ministers, headed by the Prime Minister, aids and advises the President.",
+            "Dr. Rajendra Prasad was the first President of India."
+        ],
+        "link": "https://indianexpress.com/article/india/today-india-breaking-news-live-updates-23-june-2026-mp-cm-land-probe-lucknow-fire-iran-sanctions-10752736/",
+        "date": "2026-06-25"
+    },
+    {
+        "is_exam_relevant": true,
+        "rejection_reason": "",
+        "rank": 3,
+        "core_topic": "PM POSHAN Scheme (Mid-Day Meal Scheme)",
+        "cleaned_news": "A debate has emerged in West Bengal over a proposal to potentially remove eggs from the mid-day meal scheme, now known as PM POSHAN. This discussion arose after the state government assigned meal preparation in Kolkata schools to ISKCON, which typically serves vegetarian meals. Critics argue this move could negatively impact children's nutrition and goes against local dietary habits.",
+        "static_facts": [
+            "The scheme was initially launched as the National Programme of Nutritional Support to Primary Education (NP-NSPE) on August 15, 1995.",
+            "It was renamed as PM POSHAN (Pradhan Mantri Poshan Shakti Nirman) Scheme in September 2021.",
+            "PM POSHAN is a Centrally Sponsored Scheme, with costs shared between the Central and State/UT governments.",
+            "Its primary objectives include addressing malnutrition, improving nutritional status, and increasing school enrollment and attendance.",
+            "The scheme covers all school children studying in Classes I-VIII in government and government-aided schools across the country."
+        ],
+        "link": "https://www.hindustantimes.com/india-news/row-in-bengal-over-proposal-to-drop-eggs-from-mid-day-meal-scheme-imposing-vegetarianism-tmc-bjp-derek-o-brien-iskcon-101782297151212.html",
+        "date": "2026-06-25"
+    },
+    {
+        "is_exam_relevant": true,
+        "rejection_reason": "",
+        "rank": 3,
+        "core_topic": "FIFA World Cup",
+        "cleaned_news": "South Africa has advanced to the knockout phase of the FIFA World Cup for the first time in its history, following a 1-0 victory over South Korea. Thapelo Maseko scored the decisive goal in the 63rd minute. South Africa finished second in Group A and will face Canada in the knockout game.",
+        "static_facts": [
+            "The first FIFA World Cup was held in 1930 in Uruguay.",
+            "The tournament is organized by the Fédération Internationale de Football Association (FIFA).",
+            "Brazil holds the record for the most World Cup titles, with five wins.",
+            "The 2026 FIFA World Cup will be jointly hosted by Canada, Mexico, and the United States.",
+            "The FIFA World Cup is held every four years."
+        ],
+        "link": "https://www.thehindu.com/sport/football/south-korea-vs-south-africa-world-cup-match-live-updates-june-24-2026/article71144363.ece",
+        "date": "2026-06-25"
+    }
+]
