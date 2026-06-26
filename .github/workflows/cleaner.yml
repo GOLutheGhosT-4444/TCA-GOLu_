@@ -1,0 +1,56 @@
+name: Auto News Cleaner Engine
+
+on:
+  schedule:
+    # 🕒 Yeh script roz subah 6:30 AM IST (1:00 AM UTC) par automatic chalegi
+    - cron: '0 1 * * *'
+  workflow_dispatch: # Isse aap jab chahein GitHub par jaakar manually bhi run kar sakte hain
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Repository ka code fetch karna
+    - name: Checkout Repository Code
+      uses: actions/checkout@v4
+
+    # 2. Python Environment set up karna
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v5
+      with:
+        python-level: '3.10'
+        cache: 'pip' # Dependencies cache karega taaki agli baar jaldi chale
+
+    # 3. Zaroori Libraries aur NLP Models install karna
+    - name: Install Advanced NLP Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install spacy scikit-learn pydantic
+        python -m spacy download en_core_web_sm
+
+    # 4. Local NLP Python Script ko run karna
+    - name: Run NLP Local Cleaner Script
+      run: |
+        if [ -f "1.json" ]; then
+          python cleaner_no_api.py
+        else
+          echo "❌ Error: '1.json' file repository me nahi mili!"
+          exit 1
+        fi
+
+    # 5. Cleaned data (cleaned_1.json) ko wapas GitHub par push karna
+    - name: Commit and Push Cleaned Dataset
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@://github.com"
+        
+        # Check karega ki file bani aur change hui ya nahi
+        git add cleaned_1.json
+        
+        if git diff --staged --quiet; then
+          echo "🤷‍♂️ No changes detected in cleaned_1.json"
+        else
+          git commit -m "🚀 Auto-Cleaned Exam Dataset [Bot] $(date +'%Y-%m-%d %H:%M')"
+          git push
+        fi
