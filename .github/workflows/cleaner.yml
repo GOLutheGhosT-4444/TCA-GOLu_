@@ -33,7 +33,7 @@ jobs:
     - name: Run NLP Local Cleaner Script
       run: |
         if [ -f "1.json" ]; then
-          python cleaner_no_api.py
+          python cleaner.py
         else
           echo "❌ Error: '1.json' file repository me nahi mili!"
           exit 1
