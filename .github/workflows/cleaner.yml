@@ -1,7 +1,6 @@
 name: Auto Current Affairs Fetcher
 
-on:
-  workflow_dispatch:
+on: [workflow_dispatch]
 
 permissions:
   contents: write
@@ -11,30 +10,41 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    - name: Setup Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-        cache: 'pip'
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
 
-    - name: Install Advanced NLP Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install spacy scikit-learn pydantic
-        python -m spacy download en_core_web_sm
+      - name: Install Advanced NLP Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install spacy scikit-learn pydantic
+          python -m spacy download en_core_web_sm
 
-    - name: Run NLP Local Cleaner Script
-      run: |
-        if [ -f "1.json" ]; then
-          python cleaner.py
-        else
-          echo "❌ Error: '1.json' file nahi mili!"
-          exit 1
-        fi
+      - name: Run NLP Local Cleaner Script
+        run: |
+          if [ -f "1.json" ]; then
+            python cleaner.py
+          else
+            echo "❌ Error: '1.json' file nahi mili!"
+            exit 1
+          fi
 
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add cleaned_1.json
+          if git diff --staged --quiet; then
+            echo "🤷‍♂️ No changes detected"
+          else
+            git commit -m "🚀 Auto-Cleaned Dataset"
+            git push
+          fi
     - name: Commit and Push Cleaned Dataset
       run: |
         git config --global user.name "github-actions[bot]"
