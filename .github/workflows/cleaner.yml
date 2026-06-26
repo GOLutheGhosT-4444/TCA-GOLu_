@@ -2,10 +2,8 @@ name: Auto Current Affairs Fetcher
 
 on:
   schedule:
-    # हर दिन सुबह 7:30 AM और शाम 7:30 PM (IST) पर ऑटोमैटिक चलेगा
-    # UTC समय: 2:00 AM और 2:00 PM
     - cron: '0 2,14 * * *'
-  workflow_dispatch: # मैन्युअल रन करने के लिए बटन
+  workflow_dispatch: {}
 
 permissions:
   contents: write
