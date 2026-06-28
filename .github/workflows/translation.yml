@@ -1,0 +1,27 @@
+name: GOLu Translation Engine
+
+on:
+  push:
+    paths:
+      - 'final_data.json'
+
+jobs:
+  run-translation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install Translator
+        run: pip install deep-translator
+      - name: Run Translation
+        run: python rearrangement.py
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add GOLu_ga.json
+          git commit -m "🌐 Data: Hindi translation added to GOLu_ga.json" || exit 0
+          git push
